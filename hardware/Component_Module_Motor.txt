@@ -1,0 +1,13 @@
+BJT 2n2222
+MOSFET si2300ds
+Servo
+Relay
+Limit switch
+TB6612
+Buzzer
+Bulb
+Fog making module
+Fan
+ULN2003A
+Resistor
+Led
