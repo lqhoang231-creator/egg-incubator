@@ -1,13 +1,20 @@
+#include <DHT.h>
+#define dhtPin 4
+#define DHTTYPE DHT22
+DHT dht(dhtPin, DHTTYPE);
+
 #define Pin_ain1 17
 #define Pin_ain2 5
 #define Pin_pwma 18
 #define Pin_stby 16
+
 const int servoPin = 13;
 const int channel = 0;
 unsigned long preMillis = 0;
 const long interval1 = 20000;
 const long interval2 = 15000;
 int n = 0;
+
 const int buttonPin = 25;
 const int channel_motor = 4;
 
@@ -22,10 +29,18 @@ int run = 5000;
 int stop = 5000;
 bool mtRunning = true;
 
+unsigned long delayTime_DHT22 = 2000;
+unsigned long lastTime_dht22 = 0;
+
 void setup() {
+    Serial.begin(115200);
+    Serial.println("Khoi dong DHT22");
+
     ledcSetup(channel, 50, 16);     //channel 0, frequency 50 Hz, resolution 16 bit
     ledcAttachPin(servoPin, channel);
+
     pinMode(buttonPin, INPUT_PULLUP);
+    
     pinMode(Pin_ain1, OUTPUT);
     pinMode(Pin_ain2, OUTPUT);
     pinMode(Pin_pwma, OUTPUT);
@@ -33,7 +48,9 @@ void setup() {
     digitalWrite(Pin_stby, HIGH);
     ledcSetup(channel_motor, 1000, 8);
     ledcAttachPin(Pin_pwma, channel_motor);  
-    motor(150);   
+    motor(150);
+
+    dht.begin();
 }
 
 void loop() {
@@ -62,6 +79,12 @@ void loop() {
     mtRunning = !mtRunning;
     motor(mtRunning ?150:0);
   }
+
+  //đọc cảm biến DHT22
+    if(Millis - lastTime_dht22 >= delayTime_DHT22){
+        lastTime_dht22 = Millis;
+        readDHT22()
+    }
 }
 
 void servo1 (){
@@ -99,4 +122,11 @@ void motor(int speed){
     digitalWrite(Pin_ain1, HIGH);
     digitalWrite(Pin_ain2, LOW);
     ledcWrite(channel_motor, speed);
+}
+
+void readDHT22(){
+    float temp = dht.readTemperature();
+    float hum = dht.readHumidity();
+    Serial.println("Temp: %f", temp);
+    Serial.println("Hum: %f", hum);
 }
