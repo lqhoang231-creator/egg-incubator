@@ -6,12 +6,12 @@ void BUTTON::InitBUTTON(void){
 }
 
 void BUTTON::ClickBUTTON(void){
-  unsigned long Millies = millis();
+  unsigned long Millis = millis();
   int Read = digitalRead(buttonPin);
   if(Read != lastButtonState){
-    preMillis_button = Millies;
+    preMillis_button = Millis;
   }
-  if(Millies - preMillis_button >= debounceTime){
+  if(Millis - preMillis_button >= debounceTime){
       if(Read != buttonState){
         buttonState = Read;
         if(buttonState == LOW){
