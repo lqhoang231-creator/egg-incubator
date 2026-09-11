@@ -2,6 +2,7 @@
 #include "DHT22.h"
 #include "Servo.h"
 #include "ServoButton.h"
+#include "Fan.h"
 
 DHT2x _dht22;
 SERVO _servo;
