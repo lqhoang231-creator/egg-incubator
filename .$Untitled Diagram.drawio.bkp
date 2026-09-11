@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="Page-1" id="4vW9sa0NPCWvqldklCTs">
-    <mxGraphModel dx="858" dy="602" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1471" dy="1031" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -66,8 +66,8 @@
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-48" edge="1" parent="1" source="q9jnLBfPSrlxTi-Qr2uj-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="q9jnLBfPSrlxTi-Qr2uj-1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="327" y="410" />
-              <mxPoint x="377" y="410" />
+              <mxPoint x="327" y="420" />
+              <mxPoint x="377" y="420" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -125,7 +125,7 @@
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-69" edge="1" parent="1" source="q9jnLBfPSrlxTi-Qr2uj-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="q9jnLBfPSrlxTi-Qr2uj-6" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="q9jnLBfPSrlxTi-Qr2uj-68" parent="1" style="shape=offPageConnector;whiteSpace=wrap;html=1;size=0.5;" value="5v" vertex="1">
+        <mxCell id="q9jnLBfPSrlxTi-Qr2uj-68" parent="1" style="shape=offPageConnector;whiteSpace=wrap;html=1;" value="3,3v-5v" vertex="1">
           <mxGeometry height="40" width="70" x="497" y="30" as="geometry" />
         </mxCell>
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-72" edge="1" parent="1" source="q9jnLBfPSrlxTi-Qr2uj-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="q9jnLBfPSrlxTi-Qr2uj-23" value="">
@@ -138,7 +138,52 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-73" parent="1" style="shape=offPageConnector;whiteSpace=wrap;html=1;" value="5v" vertex="1">
-          <mxGeometry height="40" width="70" x="522" y="450" as="geometry" />
+          <mxGeometry height="40" width="70" x="522" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="330" width="800" x="20" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="fan" vertex="1">
+          <mxGeometry height="80" width="80" x="740" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="water" vertex="1">
+          <mxGeometry height="40" width="80" x="740" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="fog making" vertex="1">
+          <mxGeometry height="40" width="90" x="668" y="855" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="water level sensor&lt;div&gt;uln2003a&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="620" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="bulb" vertex="1">
+          <mxGeometry height="30" width="70" x="392.5" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="temp&amp;amp;hud sensor" vertex="1">
+          <mxGeometry height="45" width="105" x="375" y="745" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-8" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="egg" vertex="1">
+          <mxGeometry height="80" width="537.5" x="162.5" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="limit switch" vertex="1">
+          <mxGeometry height="45" width="70" x="138" y="772.5" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="servo" vertex="1">
+          <mxGeometry height="30" width="70" x="92.5" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="buzzer" vertex="1">
+          <mxGeometry height="40" width="90" x="20" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="esp32" vertex="1">
+          <mxGeometry height="30" width="90" x="382.5" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-15" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="713" y="990" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-16" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="led" vertex="1">
+          <mxGeometry height="30" width="30" x="665" y="990" as="geometry" />
+        </mxCell>
+        <mxCell id="hZWmYfD8G3SHnutY9UTy-17" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="617" y="990" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
