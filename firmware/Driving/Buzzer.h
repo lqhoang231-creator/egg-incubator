@@ -4,10 +4,10 @@
 #define buzzerPin 19
 
 class BUZZER{
-  private:
-    
   public:
-
+    void InitBUZZER(void);
+    void OnBUZZER(void);
+    void OffBUZZER(void);
 };
 
 #endif
