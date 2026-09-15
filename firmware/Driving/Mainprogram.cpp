@@ -3,6 +3,11 @@
 #include "Servo.h"
 #include "ServoButton.h"
 #include "Fan.h"
+#include "Buzzer.h"
+#include "Hall.h"
+#include "Relay.h"
+#include "LimitSwitch.h"
+#include "Bulb.h"
 
 DHT2x _dht22;
 SERVO _servo;
@@ -10,6 +15,9 @@ BUTTON _button;
 FAN _fan;
 BUZZER _buzzer;
 HALL _hall;
+RELAY _relay;
+SWITCH _switch;
+BULB _bulb;
 
 void Init(void){
   _fan.InitFAN();
@@ -17,6 +25,10 @@ void Init(void){
   _servo.InitSERVO();
   _button.InitBUTTON();
   _buzzer.InitBUZZER();
+  _hall.InitHALL();
+  _relay.InitRELAY();
+  _switch.InitSWITCH();
+  _bulb.InitBULB();
 }
 
 void Runmainprogram(void){

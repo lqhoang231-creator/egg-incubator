@@ -6,5 +6,5 @@ void HALL::InitHALL(void){
 }
 
 void HALL::ReadHALL(void){
-  hallValue = digitalRead(hallPin);
+  digitalRead(hallPin);
 }
