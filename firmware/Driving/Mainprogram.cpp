@@ -19,6 +19,12 @@ RELAY _relay;
 SWITCH _switch;
 BULB _bulb;
 
+int Limitswitch_warningTime = 5000;
+unsigned long Limitswitch_preMillis = 0;
+
+int DHT22_warningTime = 5000;
+unsigned long DHT22_preMillis = 0;
+
 void Init(void){
   _fan.InitFAN();
   _dht22.InitDHT22();
@@ -32,14 +38,34 @@ void Init(void){
 }
 
 void Runmainprogram(void){
+  unsigned long MainMillis = millis();
   _dht22.ReadDHT22();
   _button.ClickBUTTON();
   _servo.StartSERVO(_button.Mode);
   _fan.ControlFAN();
-  if(_dht22.temp < 37 || _dht22.temp > 38){
-    _buzzer.OnBUZZER();
+  if(_button.Mode == 1){
+    if(MainMillis - Limitswitch_preMillis >= (_servo.Interval1 + 5000)){
+      if()
+    }
+  }
+//----------temperature & humidity monitoring
+  if(_dht22.temp < 37 || _dht22.temp > 38 || _dht22.hum < 50 || _dht22 > 55){
+    if(MainMillis - DHT22_preMillis >= DHT22_warningTime){
+      DHT22_preMillis = MainMillis;
+      _buzzer.OnBUZZER();
+    }
+    if(_dht22.temp > 38 || _dht22.hum > 55){
+      _fan.StartFAN(240);
+      _bulb.ControlBULB(50);
+    }
+    if(_dht22.temp < 37 || _dht22.hum < 55){
+      _fan.StartFAN(60);
+      _bulb.ControlBULB(175);
+      _relay.OnRELAY(3000);
+    }
   }
   else{
-    _buzzer.OffBUZZER();
+    _fan.StartFAN(150);
+    _bulb.ControlBULB(100);
   }
 }

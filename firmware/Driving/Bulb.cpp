@@ -7,6 +7,6 @@ void BULB::InitBULB(void){
   ledcAttachPin(bulbPin, bulbChannel);
 }
 
-void BULB::ControlBULB(void){
-  ledcWrite(bulbPin, 64);
+void BULB::ControlBULB(int bright){
+  ledcWrite(bulbPin, bright);
 }

@@ -144,15 +144,6 @@
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-73" parent="1" style="shape=offPageConnector;whiteSpace=wrap;html=1;" value="5v" vertex="1">
           <mxGeometry height="40" width="70" x="522" y="450" as="geometry" />
         </mxCell>
-        <mxCell id="FG1i9G6zFI2TYEVfIvV8-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="esp32" vertex="1">
-          <mxGeometry height="30" width="90" x="75" y="770" as="geometry" />
-        </mxCell>
-        <mxCell id="FG1i9G6zFI2TYEVfIvV8-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="mqtt broker" vertex="1">
-          <mxGeometry height="60" width="120" x="324.5" y="755" as="geometry" />
-        </mxCell>
-        <mxCell id="FG1i9G6zFI2TYEVfIvV8-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="mqttx" vertex="1">
-          <mxGeometry height="60" width="120" x="577" y="755" as="geometry" />
-        </mxCell>
         <mxCell id="gAH4J8A0xJzlH97Jlkv9-2" edge="1" parent="1" source="gAH4J8A0xJzlH97Jlkv9-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="q9jnLBfPSrlxTi-Qr2uj-10" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -169,6 +160,9 @@
               <mxPoint x="376.94" y="409.94" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="xOGG8fQRzXeas-CyfmV7-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="project cần thêm một nút reset: khi nhận được cảnh báo, nhấn nút để thông báo đã nhận được cảnh báo&lt;div&gt;thêm phần mqtt, dashboard&lt;/div&gt;&lt;div&gt;thêm phần cập nhật firmware qua wifi&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="580" x="50" y="590" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

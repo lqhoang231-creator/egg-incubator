@@ -9,14 +9,15 @@
 class SERVO{
   private:
     unsigned long preMillis_servo = 0;
-    unsigned long Interval1 = 20000;
-    unsigned long Interval2 = 15000;
     int n = 0;
   public:
     void InitSERVO(void);
     void StartSERVO(int Mode);
     void ServoMode1(void);
     void ServoMode2(void);
+  public:
+    unsigned long Interval1 = 20000;
+    unsigned long Interval2 = 15000;
 };
 
 #endif

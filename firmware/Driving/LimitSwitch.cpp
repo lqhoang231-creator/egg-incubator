@@ -6,5 +6,5 @@ void SWITCH::InitSWITCH(void){
 }
 
 void SWITCH::ReadSWITCH(void){
-  digitalRead(switchPin);
+  return digitalRead(switchPin) == LOW;
 }

@@ -9,7 +9,7 @@
 class BULB{
   public:
     void InitBULB(void);
-    void ControlBULB(void);
+    void ControlBULB(int bright);
 };
 
 #endif
