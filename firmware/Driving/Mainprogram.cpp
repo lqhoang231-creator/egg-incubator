@@ -18,6 +18,7 @@ HALL _hall;
 RELAY _relay;
 SWITCH _switch;
 BULB _bulb;
+OTA _ota;
 
 int Limitswitch_warningTime = 5000;
 unsigned long Limitswitch_preMillis = 0;
@@ -26,6 +27,7 @@ int DHT22_warningTime = 5000;
 unsigned long DHT22_preMillis = 0;
 
 void Init(void){
+  Serial.begin(115200);
   _fan.InitFAN();
   _dht22.InitDHT22();
   _servo.InitSERVO();
@@ -35,9 +37,12 @@ void Init(void){
   _relay.InitRELAY();
   _switch.InitSWITCH();
   _bulb.InitBULB();
+  _ota.GetMAC();
+  _ota.InitOTA();
 }
 
 void Runmainprogram(void){
+  _ota.HandleOTA();
   unsigned long MainMillis = millis();
   _dht22.ReadDHT22();
   _button.ClickBUTTON();

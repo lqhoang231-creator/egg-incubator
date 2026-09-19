@@ -17,7 +17,7 @@ void FAN::StartFAN(int Speed){
   Speed = constrain(Speed, 0, 255);     //constrain la gi? de lam gi?
   digitalWrite(Pin_ain1, HIGH);
   digitalWrite(Pin_ain2, LOW);
-  ledcWrite(channel_motor, Speed);
+  ledcWrite(motorChannel, Speed);
 }
 
 // void FAN::ControlFAN(void){
