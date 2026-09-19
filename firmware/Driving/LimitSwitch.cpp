@@ -1,3 +1,4 @@
+#include "esp32-hal.h"
 #include "esp32-hal-gpio.h"
 #include "LimitSwitch.h"
 
@@ -6,5 +7,5 @@ void SWITCH::InitSWITCH(void){
 }
 
 void SWITCH::ReadSWITCH(void){
-  return digitalRead(switchPin) == LOW;
+  Read = digitalRead(switchPin);
 }

@@ -20,8 +20,8 @@ SWITCH _switch;
 BULB _bulb;
 OTA _ota;
 
-int Limitswitch_warningTime = 5000;
-unsigned long Limitswitch_preMillis = 0;
+int Switch_warningTime = 5000;
+unsigned long Switch_preMillis = 0;
 
 int DHT22_warningTime = 5000;
 unsigned long DHT22_preMillis = 0;
@@ -48,11 +48,41 @@ void Runmainprogram(void){
   _button.ClickBUTTON();
   _servo.StartSERVO(_button.Mode);
   _fan.ControlFAN();
+
+//----------servo monitoring
   if(_button.Mode == 1){
-    if(MainMillis - Limitswitch_preMillis >= (_servo.Interval1 + 5000)){
-      if()
+    if(_switch.Read == LOW){
+      unsigned long Millis = millis();
+      if((Millis - Switch_preMillis >= (_servo.Interval1 + Switch_warningTime)) && (_switch.Read == LOW)){
+        Switch_preMillis = Millis;
+        _buzzer.OnBUZZER();
+      }
+    }
+    if(_switch.Read == HIGH){
+      unsigned long Millis = millis();
+      if((Millis - Switch_preMillis >= (_servo.Interval1 + Switch_warningTime)) && (_switch.Read == HIGH)){
+        Switch_preMillis = Millis;
+        _buzzer.OnBUZZER();
+      }
     }
   }
+  if(_button.Mode == 2){
+    if(_switch.Read == LOW){
+      unsigned long Millis = millis();
+      if((Millis - Switch_preMillis >= (_servo.Interval2 + Switch_warningTime)) && (_switch.Read == LOW)){
+        Switch_preMillis = Millis;
+        _buzzer.OnBUZZER();
+      }
+    }
+    if(_switch.Read == HIGH){
+      unsigned long Millis = millis();
+      if((Millis - Switch_preMillis >= (_servo.Interval2 + Switch_warningTime)) && (_switch.Read == HIGH)){
+        Switch_preMillis = Millis;
+        _buzzer.OnBUZZER();
+      }
+    }
+  }
+
 //----------temperature & humidity monitoring
   if(_dht22.temp < 37 || _dht22.temp > 38 || _dht22.hum < 50 || _dht22 > 55){
     if(MainMillis - DHT22_preMillis >= DHT22_warningTime){

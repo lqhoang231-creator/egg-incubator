@@ -6,7 +6,9 @@
 class SWITCH{
   public:
     void InitSWITCH(void);
-    bool ReadSWITCH(void);
+    void ReadSWITCH(void);
+  public:
+    int Read = LOW;
 };
 
 #endif
