@@ -4,11 +4,11 @@
 #define hallPin 14
 
 class HALL{
-  // public:
-  //   int hallValue;
+  public:
+    int Read_HALL;
   public:
     void InitHALL(void);
-    void ReadHALL(void);
+    int ReadHALL(void);
 };
 
 #endif

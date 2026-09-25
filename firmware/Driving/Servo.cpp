@@ -20,10 +20,12 @@ void SERVO::ServoMode1(void){
       if (n == 0){
           ledcWrite(servoChannel, 3277);
           n = 1;
+          Rotated = true;
       }
       else{
           ledcWrite(servoChannel, 6554);
           n = 0;
+          Rotated = false;
       }
   }
 }
@@ -35,10 +37,12 @@ void SERVO::ServoMode2(void){
       if (n == 0){
           ledcWrite(servoChannel, 3277);
           n = 1;
+          Rotated = true;
       }
       else{
           ledcWrite(servoChannel, 6554);
           n = 0;
+          Rotated = false;
       }
   }
 }

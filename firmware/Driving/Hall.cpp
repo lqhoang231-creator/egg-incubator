@@ -2,9 +2,10 @@
 #include "Hall.h"
 
 void HALL::InitHALL(void){
-  pinMode(hallPin, INPUT);
+  pinMode(hallPin, INPUT_PULLUP);
 }
 
 void HALL::ReadHALL(void){
-  digitalRead(hallPin);
+  Read_HALL = digitalRead(hallPin);
+  return Read_HALL;
 }

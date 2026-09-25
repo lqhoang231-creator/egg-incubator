@@ -8,7 +8,7 @@ class SWITCH{
     void InitSWITCH(void);
     void ReadSWITCH(void);
   public:
-    int Read = LOW;
+    int Read;
 };
 
 #endif

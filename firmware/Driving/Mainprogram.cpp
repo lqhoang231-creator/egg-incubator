@@ -1,3 +1,4 @@
+#include "esp32-hal.h"
 #include "Mainprogram.h"
 #include "DHT22.h"
 #include "Servo.h"
@@ -20,11 +21,15 @@ SWITCH _switch;
 BULB _bulb;
 OTA _ota;
 
-int Switch_warningTime = 5000;
+int Switch_warningTime = 2000;
 unsigned long Switch_preMillis = 0;
 
 int DHT22_warningTime = 5000;
 unsigned long DHT22_preMillis = 0;
+
+unsigned long Hall_preMillis = 0;
+int Hall_value = LOW;
+int Fan_warningTime = 4000;
 
 void Init(void){
   Serial.begin(115200);
@@ -49,35 +54,30 @@ void Runmainprogram(void){
   _servo.StartSERVO(_button.Mode);
   _fan.ControlFAN();
 
+//----------fan monitoring
+  if(_hall.ReadHALL() != Hall_value){
+    Hall_value = _hall.ReadHALL();
+    Hall_preMillis = MainMillis;
+  }
+  if(MainMillis - Hall_preMillis >= Fan_warningTime){
+    _buzzer.OnBUZZER();
+  }
+
 //----------servo monitoring
-  if(_button.Mode == 1){
-    if(_switch.Read == LOW){
-      unsigned long Millis = millis();
-      if((Millis - Switch_preMillis >= (_servo.Interval1 + Switch_warningTime)) && (_switch.Read == LOW)){
-        Switch_preMillis = Millis;
-        _buzzer.OnBUZZER();
-      }
-    }
-    if(_switch.Read == HIGH){
-      unsigned long Millis = millis();
-      if((Millis - Switch_preMillis >= (_servo.Interval1 + Switch_warningTime)) && (_switch.Read == HIGH)){
-        Switch_preMillis = Millis;
+  if(_servo.Rotated == true){
+    unsigned long Check_Millis = millis();
+    if(Check_Millis - Switch_preMillis >= Switch_warningTime){
+      Switch_preMillis = Check_Millis;
+      if(_switch.Read == HIGH){
         _buzzer.OnBUZZER();
       }
     }
   }
-  if(_button.Mode == 2){
-    if(_switch.Read == LOW){
-      unsigned long Millis = millis();
-      if((Millis - Switch_preMillis >= (_servo.Interval2 + Switch_warningTime)) && (_switch.Read == LOW)){
-        Switch_preMillis = Millis;
-        _buzzer.OnBUZZER();
-      }
-    }
-    if(_switch.Read == HIGH){
-      unsigned long Millis = millis();
-      if((Millis - Switch_preMillis >= (_servo.Interval2 + Switch_warningTime)) && (_switch.Read == HIGH)){
-        Switch_preMillis = Millis;
+  else{
+    unsigned long Check_Millis = millis();
+    if(Check_Millis - Switch_preMillis >= Switch_warningTime){
+      Switch_preMillis = Check_Millis;
+      if(_switch.Read == LOW){
         _buzzer.OnBUZZER();
       }
     }

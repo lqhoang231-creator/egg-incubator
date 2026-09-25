@@ -18,6 +18,7 @@ class SERVO{
   public:
     unsigned long Interval1 = 20000;
     unsigned long Interval2 = 15000;
+    bool Rotated = true;
 };
 
 #endif
