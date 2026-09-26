@@ -19,7 +19,7 @@ class FAN{
   public:
     void InitFAN(void);
     void StartFAN(int Speed);
-    //void ControlFAN(void);
+    void ControlFAN(void);
 };
 
 #endif

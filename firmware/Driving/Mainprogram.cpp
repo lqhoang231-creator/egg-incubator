@@ -21,7 +21,7 @@ SWITCH _switch;
 BULB _bulb;
 OTA _ota;
 
-int Switch_warningTime = 2000;
+int Switch_warningTime = 4000;
 unsigned long Switch_preMillis = 0;
 
 int DHT22_warningTime = 5000;
@@ -53,6 +53,7 @@ void Runmainprogram(void){
   _button.ClickBUTTON();
   _servo.StartSERVO(_button.Mode);
   _fan.ControlFAN();
+  _switch.ReadSWITCH();
 
 //----------fan monitoring
   if(_hall.ReadHALL() != Hall_value){
@@ -84,7 +85,7 @@ void Runmainprogram(void){
   }
 
 //----------temperature & humidity monitoring
-  if(_dht22.temp < 37 || _dht22.temp > 38 || _dht22.hum < 50 || _dht22 > 55){
+  if(_dht22.temp < 37 || _dht22.temp > 38 || _dht22.hum < 50 || _dht22.hum > 55){
     if(MainMillis - DHT22_preMillis >= DHT22_warningTime){
       DHT22_preMillis = MainMillis;
       _buzzer.OnBUZZER();
@@ -93,7 +94,10 @@ void Runmainprogram(void){
       _fan.StartFAN(240);
       _bulb.ControlBULB(50);
     }
-    if(_dht22.temp < 37 || _dht22.hum < 55){
+    else if(_dht22.temp < 37 || _dht22.hum < 50){
+      if(_dht22.temp == -1 || _dht22.hum == -1){
+        _buzzer.OnBUZZER();
+      }
       _fan.StartFAN(60);
       _bulb.ControlBULB(175);
       _relay.OnRELAY(3000);
@@ -103,4 +107,7 @@ void Runmainprogram(void){
     _fan.StartFAN(150);
     _bulb.ControlBULB(100);
   }
+
+//------------resset function
+  //-------------------------------------------------------------------con reset va logic cua temp&hum monitoring
 }

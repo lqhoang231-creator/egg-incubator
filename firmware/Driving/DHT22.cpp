@@ -15,7 +15,7 @@ void DHT2x::ReadDHT22(void){
       temp = -1;
       hum = -1;
     }
-    Serial.println("Temp: %f", temp);
-    Serial.println("Hum: %f", hum);
+    Serial.printf("Temp: %f", temp);
+    Serial.printf("Hum: %f", hum);
   }
 }

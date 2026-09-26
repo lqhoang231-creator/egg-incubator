@@ -21,3 +21,7 @@ void BUTTON::ClickBUTTON(void){
     }
   lastButtonState = Read;
 }
+
+//void BUTTON::Reset(void){
+
+//}

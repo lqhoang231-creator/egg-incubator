@@ -20,12 +20,12 @@ void FAN::StartFAN(int Speed){
   ledcWrite(motorChannel, Speed);
 }
 
-// void FAN::ControlFAN(void){
-//   unsigned long Interval = (motorRunning) ? runTime:stopTime;
-//   unsigned long Millis = millis();
-//   if(Millis - preMillis_motor >= Interval){
-//     preMillis_motor = Millis;
-//     motorRunning = !motorRunning;
-//     StartFAN(motorRunning ? 150:0);
-//   }
+void FAN::ControlFAN(void){
+  unsigned long Interval = (motorRunning) ? runTime:stopTime;
+  unsigned long Millis = millis();
+  if(Millis - preMillis_motor >= Interval){
+    preMillis_motor = Millis;
+    motorRunning = !motorRunning;
+    StartFAN(motorRunning ? 150:0);
+  }
 }

@@ -5,7 +5,7 @@
 #define _DHT22_h
 
 #include <DHT.h>
-#define dataPin 4
+#define dhtPin 4
 #define DHTTYPE DHT22
 
 class DHT2x{
