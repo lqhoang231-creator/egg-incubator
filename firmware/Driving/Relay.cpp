@@ -1,5 +1,7 @@
 #include "esp32-hal-gpio.h"
 #include "Relay.h"
+#include <Arduino.h>
+
 void RELAY::InitRELAY(void){
   pinMode(relayPin, OUTPUT);
 }

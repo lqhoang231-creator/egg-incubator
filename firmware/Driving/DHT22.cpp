@@ -1,5 +1,6 @@
-#include "HardwareSerial.h"   //tự xuất hiện
+#include "HardwareSerial.h"   
 #include "DHT22.h"
+#include <Arduino.h>
 
 void DHT2x::InitDHT22(void){
   dht.begin();

@@ -1,3 +1,4 @@
+#include <ArduinoOTA.h>
 #include "esp32-hal.h"
 #include "Mainprogram.h"
 #include "DHT22.h"
@@ -9,6 +10,8 @@
 #include "Relay.h"
 #include "LimitSwitch.h"
 #include "Bulb.h"
+#include "OTA.h"
+#include <Arduino.h>
 
 DHT2x _dht22;
 SERVO _servo;
@@ -20,6 +23,12 @@ RELAY _relay;
 SWITCH _switch;
 BULB _bulb;
 OTA _ota;
+
+#define max_temp 38
+#define min_temp 37
+#define max_hum 55
+#define min_hum 50
+#define mist_duration 3000
 
 int Switch_warningTime = 4000;
 unsigned long Switch_preMillis = 0;
@@ -87,27 +96,28 @@ void Runmainprogram(void){
 //----------temperature & humidity monitoring
   if(_dht22.temp < 37 || _dht22.temp > 38 || _dht22.hum < 50 || _dht22.hum > 55){
     if(MainMillis - DHT22_preMillis >= DHT22_warningTime){
-      DHT22_preMillis = MainMillis;
-      _buzzer.OnBUZZER();
-    }
-    if(_dht22.temp > 38 || _dht22.hum > 55){
-      _fan.StartFAN(240);
-      _bulb.ControlBULB(50);
-    }
-    else if(_dht22.temp < 37 || _dht22.hum < 50){
-      if(_dht22.temp == -1 || _dht22.hum == -1){
+      if(_dht22.temp < 37 || _dht22.temp > 38 || _dht22.hum < 50 || _dht22.hum > 55){
+        DHT22_preMillis = MainMillis;
         _buzzer.OnBUZZER();
       }
-      _fan.StartFAN(60);
-      _bulb.ControlBULB(175);
-      _relay.OnRELAY(3000);
     }
-  }
-  else{
-    _fan.StartFAN(150);
-    _bulb.ControlBULB(100);
+
+    if(_dht22.temp > max_temp)
+      _bulb.ControlBULB(50);
+    else if(_dht22.temp < min_temp){
+      if(_dht22.temp == -1)
+        _buzzer.OnBUZZER();
+      _bulb.ControlBULB(175);
+    }
+
+    if(_dht22.hum > max_hum)
+      _fan.StartFAN(230);
+    else if(_dht22.hum < min_hum)
+      _relay.OnRELAY(mist_duration);
   }
 
-//------------resset function
-  //-------------------------------------------------------------------con reset va logic cua temp&hum monitoring
+  else{
+    _fan.StartFAN(180);
+    _bulb.ControlBULB(100);
+  }
 }

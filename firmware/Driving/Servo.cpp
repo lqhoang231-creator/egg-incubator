@@ -1,5 +1,6 @@
-#include "esp32-hal-ledc.h"   //tự xuất hiện
+#include "esp32-hal-ledc.h"   
 #include "Servo.h"
+#include <Arduino.h>
 
 void SERVO::InitSERVO(void){
   ledcSetup(servoChannel, servoFrequency, servoResolution);

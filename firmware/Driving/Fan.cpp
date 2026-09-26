@@ -1,6 +1,7 @@
 #include "esp32-hal-ledc.h"
 #include "esp32-hal-gpio.h"
 #include "Fan.h"
+#include <Arduino.h>
 
 void FAN::InitFAN(void){
   pinMode(Pin_ain1, OUTPUT);

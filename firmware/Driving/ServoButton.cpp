@@ -1,5 +1,6 @@
 #include "esp32-hal-gpio.h"
 #include "ServoButton.h"
+#include <Arduino.h>
 
 void BUTTON::InitBUTTON(void){
   pinMode(buttonPin, INPUT_PULLUP);
@@ -21,7 +22,3 @@ void BUTTON::ClickBUTTON(void){
     }
   lastButtonState = Read;
 }
-
-//void BUTTON::Reset(void){
-
-//}

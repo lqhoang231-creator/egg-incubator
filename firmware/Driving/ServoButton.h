@@ -12,7 +12,6 @@ class BUTTON{
   public:
     void InitBUTTON(void);
     void ClickBUTTON(void);
-    //void Reset(void);
   public:
     int Mode = 1;       
 };
