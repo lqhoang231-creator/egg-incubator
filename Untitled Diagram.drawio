@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="Page-1" id="4vW9sa0NPCWvqldklCTs">
-    <mxGraphModel dx="1084" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1030" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -49,7 +49,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="fog making" vertex="1">
-          <mxGeometry height="60" width="120" x="697" y="270" as="geometry" />
+          <mxGeometry height="60" width="120" x="697" y="275" as="geometry" />
         </mxCell>
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" value="bulb" vertex="1">
           <mxGeometry height="60" width="120" x="472" y="110" as="geometry" />
@@ -59,15 +59,6 @@
         </mxCell>
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" value="fan" vertex="1">
           <mxGeometry height="40" width="90" x="387" y="520" as="geometry" />
-        </mxCell>
-        <mxCell id="q9jnLBfPSrlxTi-Qr2uj-58" edge="1" parent="1" source="q9jnLBfPSrlxTi-Qr2uj-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="q9jnLBfPSrlxTi-Qr2uj-9" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="q9jnLBfPSrlxTi-Qr2uj-59" edge="1" parent="1" source="q9jnLBfPSrlxTi-Qr2uj-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="q9jnLBfPSrlxTi-Qr2uj-1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="q9jnLBfPSrlxTi-Qr2uj-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" value="water level sensor&lt;div&gt;uln2003a&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="547" y="360" as="geometry" />
         </mxCell>
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="water" vertex="1">
           <mxGeometry height="60" width="120" x="697" y="360" as="geometry" />
@@ -111,7 +102,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" value="relay" vertex="1">
-          <mxGeometry height="30" width="70" x="577" y="285" as="geometry" />
+          <mxGeometry height="30" width="70" x="577" y="290" as="geometry" />
         </mxCell>
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-45" edge="1" parent="1" source="q9jnLBfPSrlxTi-Qr2uj-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1.003;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" target="q9jnLBfPSrlxTi-Qr2uj-3">
           <mxGeometry relative="1" as="geometry" />
@@ -148,6 +139,9 @@
         </mxCell>
         <mxCell id="q9jnLBfPSrlxTi-Qr2uj-73" parent="1" style="shape=offPageConnector;whiteSpace=wrap;html=1;" value="5v" vertex="1">
           <mxGeometry height="40" width="70" x="522" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="jb_jsiXjn-Bi5Xs9FfxP-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;nâng cấp: thêm nút reset còi hú; thêm phần mqtt, dashboard; pcb&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="593" x="129" y="580" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

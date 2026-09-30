@@ -117,7 +117,7 @@ void Runmainprogram(void){
   }
 
   else{
-    _fan.StartFAN(180);
     _bulb.ControlBULB(100);
   }
+  _button.Reset();
 }

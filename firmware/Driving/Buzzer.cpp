@@ -10,11 +10,6 @@ void BUZZER::InitBUZZER(void){
 
 void BUZZER::OnBUZZER(void){
   digitalWrite(buzzerPin, HIGH);
-  unsigned long Millis = millis();
-  if(Millis - preMillis_buzzer >= warning_duration){
-    preMillis_buzzer = Millis;
-    OffBUZZER();
-  }
 }
 
 void BUZZER::OffBUZZER(void){

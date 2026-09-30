@@ -15,7 +15,7 @@ void FAN::InitFAN(void){
 }
 
 void FAN::StartFAN(int Speed){
-  Speed = constrain(Speed, 0, 255);     //constrain la gi? de lam gi?
+  Speed = constrain(Speed, 0, 255);    
   digitalWrite(Pin_ain1, HIGH);
   digitalWrite(Pin_ain2, LOW);
   ledcWrite(motorChannel, Speed);
@@ -27,6 +27,6 @@ void FAN::ControlFAN(void){
   if(Millis - preMillis_motor >= Interval){
     preMillis_motor = Millis;
     motorRunning = !motorRunning;
-    StartFAN(motorRunning ? 150:0);
+    StartFAN(motorRunning ? 180:0);
   }
 }

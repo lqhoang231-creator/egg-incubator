@@ -2,6 +2,7 @@
 #define _ServoButton_h
 
 #define buttonPin 25
+#define resetButton 
 
 class BUTTON{
   private:
@@ -9,11 +10,16 @@ class BUTTON{
     int buttonState = HIGH;
     int debounceTime = 50;
     unsigned long preMillis_button = 0;
+
+    int ResetState = HIGH;
+    unsigned long preReset = 0;
   public:
     void InitBUTTON(void);
     void ClickBUTTON(void);
+    void Reset(void);
   public:
-    int Mode = 1;       
+    int Mode = 1;   
+    int Read_resetbutton;    
 };
 
 #endif
