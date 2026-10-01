@@ -2,7 +2,7 @@
 #define _ServoButton_h
 
 #define buttonPin 25
-#define resetButton 
+#define resetButton 2
 
 class BUTTON{
   private:

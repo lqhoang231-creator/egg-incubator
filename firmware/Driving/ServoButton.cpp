@@ -5,6 +5,7 @@
 
 void BUTTON::InitBUTTON(void){
   pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(resetButton, INPUT_PULLUP);
 }
 
 void BUTTON::ClickBUTTON(void){
