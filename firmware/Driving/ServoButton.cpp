@@ -3,6 +3,8 @@
 #include <Arduino.h>
 #include "Buzzer.h"
 
+BUZZER _buzzeroff;
+
 void BUTTON::InitBUTTON(void){
   pinMode(buttonPin, INPUT_PULLUP);
   pinMode(resetButton, INPUT_PULLUP);
@@ -27,12 +29,12 @@ void BUTTON::ClickBUTTON(void){
 
 void BUTTON::Reset(void){
   unsigned long Millis_reset = millis();
-  Read_resetbutton = digitalRead();
+  Read_resetbutton = digitalRead(resetButton);
   if(Read_resetbutton != ResetState){
     preReset = Millis_reset;
   }
   if(Millis_reset - preReset >= debounceTime){
     if(Read_resetbutton != ResetState)
-      OffBUZZER();
+      _buzzeroff.OffBUZZER();
   }
 }
