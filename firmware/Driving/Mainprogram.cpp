@@ -1,4 +1,4 @@
-#include <ArduinoOTA.h>
+//#include <ArduinoOTA.h>
 #include "esp32-hal.h"
 #include "Mainprogram.h"
 #include "DHT22.h"
@@ -10,7 +10,7 @@
 #include "Relay.h"
 #include "LimitSwitch.h"
 #include "Bulb.h"
-#include "OTA.h"
+//#include "OTA.h"
 #include <Arduino.h>
 
 DHT2x _dht22;
@@ -22,13 +22,13 @@ HALL _hall;
 RELAY _relay;
 SWITCH _switch;
 BULB _bulb;
-OTA _ota;
+//OTA _ota;
 
 #define max_temp 38
 #define min_temp 37
 #define max_hum 55
 #define min_hum 50
-#define mist_duration 3000
+#define mist_duration 5000
 
 int Switch_warningTime = 4000;
 unsigned long Switch_preMillis = 0;
@@ -51,18 +51,19 @@ void Init(void){
   _relay.InitRELAY();
   _switch.InitSWITCH();
   _bulb.InitBULB();
-  _ota.GetMAC();
-  _ota.InitOTA();
+  //_ota.GetMAC();
+  //_ota.InitOTA();
 }
 
 void Runmainprogram(void){
-  _ota.HandleOTA();
+  //_ota.HandleOTA();
   unsigned long MainMillis = millis();
   _dht22.ReadDHT22();
   _button.ClickBUTTON();
   _servo.StartSERVO(_button.Mode);
   _fan.ControlFAN();
   _switch.ReadSWITCH();
+  _bulb.ControlBULB(100);
 
 //----------fan monitoring
   if(_hall.ReadHALL() != Hall_value){
@@ -112,12 +113,15 @@ void Runmainprogram(void){
 
     if(_dht22.hum > max_hum)
       _fan.StartFAN(230);
-    else if(_dht22.hum < min_hum)
+    else if(_dht22.hum < min_hum){
+      if(_dht22.hum == -1)
+        _buzzer.OnBUZZER();
       _relay.OnRELAY(mist_duration);
+    }  
   }
 
-  else{
-    _bulb.ControlBULB(100);
-  }
+  // else{
+  //   _bulb.ControlBULB(100);
+  // }
   _button.Reset();
 }

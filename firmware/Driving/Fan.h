@@ -2,7 +2,7 @@
 #define _Fan_h
 
 #define Pin_ain1 17
-#define Pin_ain2 5
+#define Pin_ain2 23
 #define Pin_pwma 18
 #define Pin_stby 16
 #define motorChannel 4

@@ -1,6 +1,6 @@
-#include "mqtt.h"
-#include <PubSubClient.h>
+// #include "mqtt.h"
+// #include <PubSubClient.h>
 
-WiFiClient espClient;
-PubSubClient mqttClient(espClient);
+// WiFiClient espClient;
+// PubSubClient mqttClient(espClient);
 

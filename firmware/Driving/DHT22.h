@@ -2,7 +2,7 @@
 #define _DHT22_h
 
 #include <DHT.h>
-#define dhtPin 4
+#define dhtPin 26
 #define DHTTYPE DHT22
 
 class DHT2x{

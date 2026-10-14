@@ -8,5 +8,5 @@ void BULB::InitBULB(void){
 }
 
 void BULB::ControlBULB(int bright){
-  ledcWrite(bulbPin, bright);
+  ledcWrite(bulbChannel, bright);
 }
